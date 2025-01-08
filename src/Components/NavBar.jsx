@@ -1,5 +1,8 @@
 import { Menu, ChevronDown, ChevronUp } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
+import Logo from '../assets/logo.png'
+import SearchIcon from '../assets/search_icon.svg'
+import UserIcon from '../assets/user_icon.svg'
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
@@ -126,7 +129,7 @@ const NavBar = () => {
     <nav className="bg-black flex items-center h-16 md:h-20 px-5 md:px-20 gap-10 justify-between">
       <div className="flex items-center gap-10">
         <img
-          src="./src/assets/logo.png"
+          src={Logo}
           width={80}
           height={80}
           className="mt-2"
@@ -171,10 +174,10 @@ const NavBar = () => {
 
       <div className="flex items-center gap-5 md:gap-10">
         <button>
-          <img src="./src/assets/search_icon.svg" width={18} height={18} />
+          <img src={SearchIcon} width={18} height={18} />
         </button>
         <button>
-          <img src="./src/assets/user_icon.svg" width={16} height={16} />
+          <img src={UserIcon} width={16} height={16} />
         </button>
         {/* Mobile Menu Icon */}
         <button className="md:hidden" onClick={toggleMobileMenu}>

@@ -8,33 +8,21 @@ import Slider from "react-slick";
 
 import "./ProductCategories.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-// const responsive = {
-//   desktop: {
-//     breakpoint: { max: 3000, min: 1024 },
-//     items: 6,
-//     slidesToSlide: 6,
-//   },
-//   tablet: {
-//     breakpoint: { max: 1024, min: 464 },
-//     items: 2,
-//     slidesToSlide: 2,
-//   },
-//   mobile: {
-//     breakpoint: { max: 464, min: 0 },
-//     items: 2,
-//     slidesToSlide: 1,
-//   },
-// };
+import LivingRoom from '../../assets/Living_Room.png'
+import Bedroom from '../../assets/Bedroom.png'
+import Dinning from '../../assets/Dining.png'
+import Office from '../../assets/Office.png'
+import Storage from '../../assets/Storage.png'
+import StudyRoom from '../../assets/Study_Room.png'
 
 const categoriesList = [
-  { id: 1, name: "Living Room", image_Url: "./src/assets/Living_Room.png" },
-  { id: 2, name: "Dining", image_Url: "./src/assets/Dining.png" },
-  { id: 3, name: "Bedroom", image_Url: "./src/assets/Bedroom.png" },
-  { id: 4, name: "Office", image_Url: "./src/assets/Office.png" },
-  { id: 5, name: "Storage", image_Url: "./src/assets/Storage.png" },
-  { id: 6, name: "Study Room", image_Url: "./src/assets/Study_Room.png" },
-  { id: 7, name: "Study Room", image_Url: "./src/assets/Study_Room.png" },
+  { id: 1, name: "Living Room", image_Url: LivingRoom },
+  { id: 2, name: "Dining", image_Url: Dinning },
+  { id: 3, name: "Bedroom", image_Url: Bedroom },
+  { id: 4, name: "Office", image_Url: Office },
+  { id: 5, name: "Storage", image_Url: Storage },
+  { id: 6, name: "Study Room", image_Url: StudyRoom },
+  { id: 7, name: "Study Room", image_Url: StudyRoom },
 ];
 
 // Custom Left Arrow
