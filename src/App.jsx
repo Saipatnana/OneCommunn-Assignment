@@ -1,10 +1,24 @@
-import { useState } from "react";
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
-function App() {
-  const [count, setCount] = useState(0);
+import Search from './Pages/Search'
+import NavBar from "./Components/NavBar";
+import Footer from "./Components/Footer";
+import ProductViewPage from "./Pages/ProductViewPage";
+import KitchenInterior from "./Pages/KitchenInterior";
+import ContactUs from "./Pages/ContactUs";
 
-  return <Home />;
-}
+const App = () => (
+  <BrowserRouter>
+    <NavBar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/search" element={<Search/>}/>
+      <Route path="/product" element={<ProductViewPage/>}/>
+      <Route path="/Kitchen_interior" element={<KitchenInterior/>}/>
+      <Route path="/Contact_us" element={<ContactUs/>}/>
+    </Routes>
+    <Footer/>
+  </BrowserRouter>
+);
 
 export default App;

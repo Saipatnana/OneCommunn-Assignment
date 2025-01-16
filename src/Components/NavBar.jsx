@@ -1,8 +1,9 @@
 import { Menu, ChevronDown, ChevronUp } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
-import Logo from '../assets/logo.png'
-import SearchIcon from '../assets/search_icon.svg'
-import UserIcon from '../assets/user_icon.svg'
+import Logo from "../assets/logo.png";
+import SearchIcon from "../assets/search_icon.svg";
+import UserIcon from "../assets/user_icon.svg";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
@@ -128,13 +129,9 @@ const NavBar = () => {
   return (
     <nav className="bg-black flex items-center h-16 md:h-20 px-5 md:px-20 gap-10 justify-between">
       <div className="flex items-center gap-10">
-        <img
-          src={Logo}
-          width={80}
-          height={80}
-          className="mt-2"
-          alt="Logo"
-        />
+      <Link to={"/"}>
+        <img src={Logo} width={80} height={80} className="mt-2" alt="Logo" />
+        </Link>
         {/* Desktop Menu */}
         <ul className="bg-black hidden md:flex gap-10" ref={dropdownRef}>
           {menuList.map((item, index) => (
@@ -173,9 +170,11 @@ const NavBar = () => {
       </div>
 
       <div className="flex items-center gap-5 md:gap-10">
+      <Link to={"/search"} className="flex items-center">
         <button>
-          <img src={SearchIcon} width={18} height={18} />
+            <img src={SearchIcon} width={18} height={18}/>
         </button>
+        </Link>
         <button>
           <img src={UserIcon} width={16} height={16} />
         </button>
