@@ -6,14 +6,15 @@ import {
   ChevronUp,
 } from "lucide-react";
 import SearchImage01 from "../assets/search_image01.png";
-import serachImage02 from '../assets/search_Image02.png'
-import SearchImage03 from "../assets/search_image03.png";
-import SearchImage04 from "../assets/search_image04.png";
-import SearchImage05 from "../assets/search_image05.png";
-import SearchImage06 from "../assets/search_image06.png";
-import SearchImage07 from "../assets/search_image07.png";
-import SearchImage08 from "../assets/search_image08.png";
-import SearchImage09 from "../assets/search_image09.png";
+import SearchImage02 from '../assets/search_Image02.png'
+import SearchImage03 from '../assets/search_Image03.png'
+import SearchImage04 from '../assets/search_Image04.png'
+import SearchImage05 from '../assets/search_Image05.png'
+import SearchImage06 from '../assets/search_Image06.png'
+import SearchImage07 from '../assets/search_Image07.png'
+import SearchImage08 from '../assets/search_Image08.png'
+import SearchImage09 from '../assets/search_Image09.png'
+
 import SearchSection02Image01 from "../assets/search_section02_image01.png";
 import SearchSection02Image02 from "../assets/search_section02_image02.png";
 import SearchSection02Image03 from "../assets/Luxury_Bed_Set.png";
@@ -35,7 +36,7 @@ const searchdata = [
   {
     id: 2,
     title: "Swing bed",
-    imageUrl: serachImage02,
+    imageUrl: SearchImage02,
   },
   {
     id: 3,
