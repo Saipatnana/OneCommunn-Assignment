@@ -123,7 +123,7 @@ const KitchenInterior = () => {
         <div className="flex flex-col items-center my-6 gap-16">
           {typesOfKitchen.map((item, index) => (
             <div
-              className="flex items-center gap-16 md:flex-row flex-col md:even:flex-row-reverse"
+              className="flex items-center gap-1 md:gap-14 md:flex-row flex-col md:even:flex-row-reverse"
               key={index}
             >
               <img
