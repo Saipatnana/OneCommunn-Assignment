@@ -6,7 +6,7 @@ import {
   ChevronUp,
 } from "lucide-react";
 import SearchImage01 from "../assets/search_image01.png";
-import SearchImage02 from "../assets/search_image02.png";
+import serachImage02 from '../assets/search_Image02.png'
 import SearchImage03 from "../assets/search_image03.png";
 import SearchImage04 from "../assets/search_image04.png";
 import SearchImage05 from "../assets/search_image05.png";
@@ -35,7 +35,7 @@ const searchdata = [
   {
     id: 2,
     title: "Swing bed",
-    imageUrl: SearchImage02,
+    imageUrl: serachImage02,
   },
   {
     id: 3,
