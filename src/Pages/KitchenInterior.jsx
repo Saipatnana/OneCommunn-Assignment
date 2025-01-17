@@ -10,43 +10,19 @@ import BreshIcon from "../assets/bresh_icon.svg";
 import KitchenTypeImage01 from "../assets/kitchen_Type_image01.png";
 import KitchenTypeImage02 from "../assets/kitchen_Type_image02.png";
 import KitchenTypeImage03 from "../assets/kitchen_Type_image03.png";
-import HappyKitchensimage01 from '../assets/Happy_Kitchens_image01.png'
-import HappyKitchensimage02 from '../assets/Happy_Kitchens_image02.png'
-import HappyKitchensimage03 from '../assets/Happy_Kitchens_image03.png'
-import HappyKitchensimage04 from '../assets/Happy_Kitchens_image04.png'
-import HappyKitchensimage05 from '../assets/Happy_Kitchens_image05.png'
+import HappyKitchensimage01 from '../assets/Happy_Kitchens_image01.png';
+import HappyKitchensimage02 from '../assets/Happy_Kitchens_image02.png';
+import HappyKitchensimage03 from '../assets/Happy_Kitchens_image03.png';
+import HappyKitchensimage04 from '../assets/Happy_Kitchens_image04.png';
+import HappyKitchensimage05 from '../assets/Happy_Kitchens_image05.png';
 
 const WhyChooseUsList = [
-  {
-    id: 1,
-    name: "No hidden charges",
-    icon: TagIcon,
-  },
-  {
-    id: 2,
-    name: "Flat 5 to 10 years warranty",
-    icon: GurdIcon,
-  },
-  {
-    id: 3,
-    name: "Delivery in 50 days",
-    icon: VanIcon,
-  },
-  {
-    id: 4,
-    name: "30+ inhouse designers",
-    icon: StafIcon,
-  },
-  {
-    id: 5,
-    name: "Space saving",
-    icon: SpaceIcon,
-  },
-  {
-    id: 6,
-    name: "Personalized",
-    icon: BreshIcon,
-  },
+  { id: 1, name: "No hidden charges", icon: TagIcon },
+  { id: 2, name: "Flat 5 to 10 years warranty", icon: GurdIcon },
+  { id: 3, name: "Delivery in 50 days", icon: VanIcon },
+  { id: 4, name: "30+ inhouse designers", icon: StafIcon },
+  { id: 5, name: "Space saving", icon: SpaceIcon },
+  { id: 6, name: "Personalized", icon: BreshIcon },
 ];
 
 const typesOfKitchen = [
@@ -71,32 +47,23 @@ const typesOfKitchen = [
 ];
 
 const happyKitchenImages = [
-  {
-    id:1,
-    image:HappyKitchensimage01
-  },
-  {
-    id:2,
-    image:HappyKitchensimage02
-  },
-  {
-    id:3,
-    image:HappyKitchensimage03
-  },
-  {
-    id:4,
-    image:HappyKitchensimage04
-  },
-  {
-    id:5,
-    image:HappyKitchensimage05
-  },
-]
+  { id:1, image:HappyKitchensimage01 },
+  { id:2, image:HappyKitchensimage02 },
+  { id:3, image:HappyKitchensimage03 },
+  { id:4, image:HappyKitchensimage04 },
+  { id:5, image:HappyKitchensimage05 },
+];
 
 const KitchenInterior = () => {
   return (
     <main>
-      <motion.section className="relative" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+      {/* Kitchen Image Section */}
+      <motion.section
+        className="relative"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <img
           src={KitchenImage01}
           alt="kitchen image"
@@ -107,7 +74,13 @@ const KitchenInterior = () => {
         </h3>
       </motion.section>
 
-      <motion.section className="py-6 flex flex-col items-center px-5 md:px-10 bg-[#F7F7F7]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+      {/* Why Choose Us Section */}
+      <motion.section
+        className="py-6 flex flex-col items-center px-5 md:px-10 bg-[#F7F7F7]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <h3 className="text-2xl font-bold text-center">Why Choose Us</h3>
         <div className="grid md:grid-cols-3 grid-cols-1 w-full gap-5 mt-5">
           {WhyChooseUsList.map((item, index) => (
@@ -115,7 +88,7 @@ const KitchenInterior = () => {
               key={index}
               className="bg-[#D3D3D3] p-6 rounded-lg flex flex-col items-center gap-2 shadow-md"
               initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
               <img src={item.icon} alt={item.name} className="h-5 w-5" />
@@ -125,15 +98,21 @@ const KitchenInterior = () => {
         </div>
       </motion.section>
 
-      <motion.section className="text-center my-6 px-5 md:px-20" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-        <h3 className="font-bold text-2xl mt-16 mb-12">Types of kitchen</h3>
+      {/* Types of Kitchen Section */}
+      <motion.section
+        className="text-center my-6 px-5 md:px-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <h3 className="font-bold text-2xl mt-16 mb-12">Types of Kitchen</h3>
         <div className="flex flex-col items-center my-6 gap-16">
           {typesOfKitchen.map((item, index) => (
             <motion.div
               className="flex items-center gap-1 md:gap-14 md:flex-row flex-col md:even:flex-row-reverse"
               key={index}
               initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
             >
               <img
@@ -150,20 +129,36 @@ const KitchenInterior = () => {
         </div>
       </motion.section>
 
-      <motion.section className="text-center my-6 px-5 md:px-20 mb-20" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+      {/* Happy Kitchens Section */}
+      <motion.section
+        className="text-center my-6 px-5 md:px-20 mb-20"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <h3 className="font-bold text-2xl mt-16 mb-12">
           Happy Kitchens / Designed Kitchens
         </h3>
         <div className="flex flex-col items-center md:gap-12 gap-6">
-          <motion.div className="flex md:flex-row flex-col items-center md:gap-12 gap-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-            <div><img src={HappyKitchensimage01} alt="happy kitchen Image" className="w-full h-full"/></div>
-            <div><img src={HappyKitchensimage02} alt="happy kitchen Image" className="w-full h-full"/></div>
+          <motion.div
+            className="flex md:flex-row flex-col items-center md:gap-12 gap-6"
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <div><img src={HappyKitchensimage01} alt="happy kitchen Image" className="w-full h-full" /></div>
+            <div><img src={HappyKitchensimage02} alt="happy kitchen Image" className="w-full h-full" /></div>
           </motion.div>
-          <motion.div className="flex md:flex-row flex-col items-center justify-between md:gap-12 gap-6" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-            <div><img src={HappyKitchensimage03} alt="happy kitchen Image" className="w-full h-full"/></div>
-            <div><img src={HappyKitchensimage04} alt="happy kitchen Image" className="w-full h-full"/></div>
+          <motion.div
+            className="flex md:flex-row flex-col items-center justify-between md:gap-12 gap-6"
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <div><img src={HappyKitchensimage03} alt="happy kitchen Image" className="w-full h-full" /></div>
+            <div><img src={HappyKitchensimage04} alt="happy kitchen Image" className="w-full h-full" /></div>
           </motion.div>
-          <div><img src={HappyKitchensimage05} alt="happy kitchen Image" className="w-full h-full"/></div>
+          <div><img src={HappyKitchensimage05} alt="happy kitchen Image" className="w-full h-full" /></div>
         </div>
       </motion.section>
     </main>
