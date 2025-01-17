@@ -5,7 +5,9 @@ import ourProcessImage3 from "../assets/ourprocess_image03.png";
 import ourProcessImage4 from "../assets/ourprocess_image04.png";
 import ourProcessImage5 from "../assets/ourprocess_image05.png";
 import ourProcessImage6 from "../assets/ourprocess_image06.png";
+import { motion } from "framer-motion";
 
+// Our process steps data
 const ourprocess = [
   {
     id: 1,
@@ -46,18 +48,62 @@ const ourprocess = [
 ];
 
 const OurProcess = () => {
+  // Animation variants
+  const processVariant = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <section className="flex flex-col items-center text-center px-5 md:px-20 py-10">
-      <h1 className="text-3xl font-bold mb-6">Our Process</h1>
+      <motion.h1
+        className="text-3xl font-bold mb-6"
+        variants={processVariant}
+        initial="hidden"
+        animate="visible"
+      >
+        Our Process
+      </motion.h1>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {ourprocess.map((process, index) => (
-          <div className="flex items-center gap-3" key={process.id}>
-            <img src={process.image} alt={process.title} />
+          <motion.div
+            className="flex items-center gap-3"
+            key={process.id}
+            variants={processVariant}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <motion.img
+              src={process.image}
+              alt={process.title}
+              className="w-24 h-24 object-cover rounded-md"
+              variants={processVariant}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            />
             <div className="text-left">
-              <h3 className="font-bold">{process.title}</h3>
-              <p>{process.info}</p>
+              <motion.h3
+                className="font-bold"
+                variants={processVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                {process.title}
+              </motion.h3>
+              <motion.p
+                variants={processVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                {process.info}
+              </motion.p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

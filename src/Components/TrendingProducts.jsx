@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"; // Import Framer Motion
 import TrendingProductsIcon from "../assets/TrendingProducts.png";
 import LuxuryBedSet from "../assets/Luxury_Bed_Set.png";
 import LuxurySofaSet from "../assets/Luxury_Sofa_Set.png";
@@ -20,34 +21,57 @@ const TrendingProducts = () => {
   ];
 
   return (
-    <section className="md:px-20 px-5 mb-10">
+    <motion.section
+      className="md:px-20 px-5 mb-10"
+      initial={{ opacity: 0, y: 50 }} // Initial state
+      animate={{ opacity: 1, y: 0 }} // Final state
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       {/* Header */}
-      <div className="bg-[#D3D3D3] p-3 rounded-md flex gap-3 items-center">
+      <motion.div
+        className="bg-[#D3D3D3] p-3 rounded-md flex gap-3 items-center"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+      >
         <img
           src={TrendingProductsIcon}
           alt="Trending Products Icon"
           className="w-6 h-6"
         />
         <h2 className="text-lg md:text-xl font-bold">Trending Products</h2>
-      </div>
+      </motion.div>
 
       {/* Products Grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-8">
-        {TrendingProductsList.map((product) => (
-          <div
+        {TrendingProductsList.map((product, index) => (
+          <motion.div
             key={product.id}
             className="relative bg-[#D3D3D3] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 group"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              delay: 0.1 + index * 0.1, // Staggered animation
+              duration: 0.5,
+              ease: "easeOut",
+            }}
+            whileHover={{ scale: 1.05 }} // Enlarge on hover
           >
             {/* Product Image */}
-            <img
+            <motion.img
               src={product.imageUrl}
               alt={product.name}
               className="w-full h-48 object-cover transition-opacity duration-300 group-hover:opacity-70"
+              whileHover={{ opacity: 0.8 }}
+              transition={{ duration: 0.3 }}
             />
 
             {/* View More Button */}
-            <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white text-[10px] md:text-base px-6 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            Enquire Now
+            <button
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black text-white text-[10px] md:text-base px-6 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-100"
+              
+            >
+              Enquire Now
             </button>
 
             {/* Product Name */}
@@ -56,10 +80,10 @@ const TrendingProducts = () => {
                 {product.name}
               </h3>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

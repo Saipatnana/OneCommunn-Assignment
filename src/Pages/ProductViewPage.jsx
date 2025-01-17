@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import ProductImage01 from "../assets/product_view_image01.png";
 import ProductImage02 from "../assets/product_view_image02.png";
 import ProductImage03 from "../assets/product_view_image03.png";
@@ -28,55 +29,100 @@ const relatedProductsData = [
     imageUrl: ProductImage05,
   },
 ];
+
 const ProductViewPage = () => {
   return (
     <main className="box-border px-5 md:px-20">
       <section className="flex flex-col md:flex-row my-8 gap-6">
-        <div>
-          <img src={ProductImage01} />
-        </div>
+        {/* Product Image */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <img src={ProductImage01} alt="Product" />
+        </motion.div>
+
+        {/* Product Details */}
         <div className="flex flex-col items-start gap-3">
-          <div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
             <h3 className="text-2xl font-bold">Bedroom</h3>
             <div className="flex items-center gap-3 mt-4">
               <div className="rounded-full">
-                <img src={designerProfile01} alt="profile"></img>
+                <img src={designerProfile01} alt="profile" />
               </div>
               <div>
                 <p className="text-xs">Designer</p>
                 <p className="text-base">LuxuryLiving123</p>
               </div>
             </div>
-          </div>
-          <p className="w-[65%]">
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="w-[65%]"
+          >
             Discover the epitome of luxury living with our exquisite furniture
             collection. Embrace the elegance and sophistication in every piece.
             Bring home the luxury you deserve today.
-          </p>
-          <div className="mt-3 w-full">
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="mt-3 w-full"
+          >
             <p className="text-sm">Customisation Available</p>
-            <button className="bg-black md:w-72 w-full rounded-lg p-2 text-white text-sm mt-1">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-black md:w-72 w-full rounded-lg p-2 text-white text-sm mt-1"
+            >
               Enquire Now
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       </section>
-      <section className="my-6 hidden md:block">
-        <h3 className="font-bold text-xl ">Other related products</h3>
+
+      {/* Related Products Section */}
+      <motion.section
+        className="my-6 hidden md:block"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+      >
+        <h3 className="font-bold text-xl">Other related products</h3>
         <div className="grid md:grid-cols-4 mt-4">
           {relatedProductsData.map((item, index) => (
-            <div className="bg-[#D3D3D3] flex flex-col items-center box-border w-fit rounded-lg" key={index}>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 + index * 0.2 }}
+              className="bg-[#D3D3D3] flex flex-col items-center box-border w-fit rounded-lg"
+            >
               <img src={item.imageUrl} alt="product image" />
-              <div className=" w-full text-center px-4 py-6 flex flex-col items-center">
+              <div className="w-full text-center px-4 py-6 flex flex-col items-center">
                 <h4 className="font-bold text-md mb-3">{item.name}</h4>
-                <button className="bg-black text-white rounded-md w-full p-2">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-black text-white rounded-md w-full p-2"
+                >
                   View Details
-                </button>
+                </motion.button>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
     </main>
   );
 };

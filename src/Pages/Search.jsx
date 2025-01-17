@@ -26,6 +26,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { motion } from "framer-motion"; // Import motion
 
 const searchdata = [
   {
@@ -295,14 +296,25 @@ const Search = () => {
 
         {/* Main Content */}
         <div className="w-3/4 bg-white p-4 grid grid-cols-2 md:grid-cols-4 gap-10 flex-1">
-          {searchdata.map((item) => (
-            <div key={item.id} className="flex flex-col gap-2">
+          {searchdata.map((item,index) => (
+            <motion.div
+              key={item.id}
+              className="flex flex-col gap-2"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              
+              transition={{
+                delay: 0.1 + index * 0.1, // Staggered animation for each card
+                duration: 0.5,
+                ease: "easeOut",
+              }}
+            >
               <img src={item.imageUrl} alt={item.title} />
               <h5 className="text-lg">{item.title}</h5>
               <button className="bg-black text-white rounded-md p-2 w-fit">
                 Enquire
               </button>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
