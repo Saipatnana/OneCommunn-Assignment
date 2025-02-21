@@ -5,6 +5,8 @@ import SearchIcon from "../assets/search_icon.svg";
 import UserIcon from "../assets/user_icon.svg";
 import { Link } from "react-router-dom";
 
+
+
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
   const [activeDropdown, setActiveDropdown] = useState(null); // State for active dropdown

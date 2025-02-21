@@ -67,7 +67,7 @@ const KitchenInterior = () => {
         <img
           src={KitchenImage01}
           alt="kitchen image"
-          className="object-cover w-full"
+          className="object-cover w-full -z-10"
         />
         <h3 className="absolute inset-0 flex items-center justify-center text-white md:text-3xl font-bold">
           Welcome to VIBER Kitchen Interior
