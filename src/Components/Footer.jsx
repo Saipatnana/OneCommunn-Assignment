@@ -62,7 +62,7 @@ const Footer = () => {
       </div>
       <hr />
       <div className="flex items-center flex-col">
-        <p className="text-xs py-3">2024 © All rights reserved - Cozy Comfort</p>
+        <p className="text-xs py-3">2024 © All rights reserved - Vibrer</p>
         <img src={FooterImage}/>
       </div>
     </footer>
