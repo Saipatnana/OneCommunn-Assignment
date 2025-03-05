@@ -29,7 +29,7 @@ const Footer = () => {
           <p className="text-sm mt-4">
            Vibrer, a premium brand from SREGA Electronics & Furniture LLP, is your one-stop solution for all kinds of furniture needs. Whether you're looking for stylish home furnishings, ergonomic office furniture, or customized solutions for commercial spaces, Vibrer offers a perfect blend of functionality, durability, and modern design. With a commitment to quality craftsmanship and innovative designs, Vibrer ensures that every piece enhances your space while providing maximum comfort and efficiency. From contemporary sofas to smart storage solutions, Vibrer caters to diverse needs, making it the go-to choice for those seeking premium furniture under one trusted brand.
           </p>
-          <div className="flex items-center mt-4 gap-5">
+          <div className="flex items-center my-4 gap-5">
             <a
               href="https://instagram.com"
               target="_blank"
